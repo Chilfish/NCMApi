@@ -1,7 +1,7 @@
 // 本地歌曲匹配音乐信息
 
 module.exports = (query, request) => {
-  let songs = [
+  const songs = [
     {
       title: query.title || '',
       album: query.album || '',

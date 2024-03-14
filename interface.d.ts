@@ -1,3 +1,5 @@
+/* eslint-disable node/prefer-global/buffer */
+
 export interface RequestBaseConfig {
   cookie?: string
   realIP?: string // IPv4/IPv6 filled in X-Real-IP
@@ -66,8 +68,8 @@ export const enum ListOrder {
 }
 
 export function album_list(
-  params: { area?: AlbumListArea; type: string } & MultiPageConfig &
-    RequestBaseConfig,
+  params: { area?: AlbumListArea, type: string } & MultiPageConfig &
+  RequestBaseConfig,
 ): Promise<Response>
 
 export const enum AlbumListStyleArea {
@@ -206,7 +208,7 @@ export function artist_list(
       | 'Z'
     type?: ArtistType
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function artist_mv(
@@ -223,11 +225,11 @@ export function artist_songs(
     id: string | number
     order?: ArtistSongsOrder
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function artist_sub(
-  params: { id: string | number; t: SubAction } & RequestBaseConfig,
+  params: { id: string | number, t: SubAction } & RequestBaseConfig,
 ): Promise<Response>
 
 export function artist_sublist(
@@ -271,7 +273,7 @@ export function batch(
 ): Promise<Response>
 
 export function captcha_sent(
-  params: { cellphone: string; ctcode?: number | string } & RequestBaseConfig,
+  params: { cellphone: string, ctcode?: number | string } & RequestBaseConfig,
 ): Promise<Response>
 
 export function captcha_verify(
@@ -290,7 +292,7 @@ export function cellphone_existence_check(
 ): Promise<Response>
 
 export function check_music(
-  params: { id: string | number; br: string | number } & RequestBaseConfig,
+  params: { id: string | number, br: string | number } & RequestBaseConfig,
 ): Promise<Response>
 
 export const enum SearchType {
@@ -311,7 +313,7 @@ export function cloudsearch(
     keywords: string
     type?: SearchType
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export const enum CommentType {
@@ -391,7 +393,7 @@ export function comment_album(
     id: string | number
     before?: string | number
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function comment_dj(
@@ -399,7 +401,7 @@ export function comment_dj(
     id: string | number
     before?: string | number
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function comment_event(
@@ -407,7 +409,7 @@ export function comment_event(
     threadId: string
     before?: string | number
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function comment_floor(
@@ -426,7 +428,7 @@ export function comment_hot(
     type: CommentType
     before?: string | number
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function comment_hotwall_list(
@@ -448,7 +450,7 @@ export function comment_music(
     id: string | number
     before?: string | number
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function comment_mv(
@@ -456,7 +458,7 @@ export function comment_mv(
     id: string | number
     before?: string | number
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function comment_playlist(
@@ -465,7 +467,7 @@ export function comment_playlist(
 
     before?: string | number
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function comment_video(
@@ -473,7 +475,7 @@ export function comment_video(
     id: string | number
     before?: string | number
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function countries_code_list(
@@ -534,7 +536,7 @@ export function dj_program(
     rid: string | number
     asc: 'true' | 1 | 'false' | 0
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function dj_program_detail(
@@ -553,7 +555,7 @@ export function dj_radio_hot(
   params: {
     cateId: string | number
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function dj_recommend(params: RequestBaseConfig): Promise<Response>
@@ -586,7 +588,7 @@ export function dj_recommend_type(
 ): Promise<Response>
 
 export function dj_sub(
-  params: { t: SubAction; rid: string | number } & RequestBaseConfig,
+  params: { t: SubAction, rid: string | number } & RequestBaseConfig,
 ): Promise<Response>
 
 export function dj_sublist(
@@ -618,7 +620,7 @@ export function dj_toplist_popular(
 ): Promise<Response>
 
 export function event(
-  params: { pagesize?: number; lasttime?: number } & RequestBaseConfig,
+  params: { pagesize?: number, lasttime?: number } & RequestBaseConfig,
 ): Promise<Response>
 
 export function event_del(
@@ -634,11 +636,11 @@ export function event_forward(
 ): Promise<Response>
 
 export function fm_trash(
-  params: { id: string | number; time?: string | number } & RequestBaseConfig,
+  params: { id: string | number, time?: string | number } & RequestBaseConfig,
 ): Promise<Response>
 
 export function follow(
-  params: { t: SubAction; id: string | number } & RequestBaseConfig,
+  params: { t: SubAction, id: string | number } & RequestBaseConfig,
 ): Promise<Response>
 
 export function history_recommend_songs(
@@ -678,11 +680,11 @@ export function likelist(
 ): Promise<Response>
 
 export function login(
-  params: { email: string; password: string } & RequestBaseConfig,
+  params: { email: string, password: string } & RequestBaseConfig,
 ): Promise<Response>
 
 export function login(
-  params: { email: string; md5_password: string } & RequestBaseConfig,
+  params: { email: string, md5_password: string } & RequestBaseConfig,
 ): Promise<Response>
 
 export function login_cellphone(
@@ -783,7 +785,7 @@ export function mv_all(
     type?: MvType
     order?: MvOrder
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function mv_detail(
@@ -799,11 +801,11 @@ export function mv_exclusive_rcmd(
 ): Promise<Response>
 
 export function mv_first(
-  params: { area?: MvArea; limit?: string | number } & RequestBaseConfig,
+  params: { area?: MvArea, limit?: string | number } & RequestBaseConfig,
 ): Promise<Response>
 
 export function mv_sub(
-  params: { t: SubAction; mvid: string | number } & RequestBaseConfig,
+  params: { t: SubAction, mvid: string | number } & RequestBaseConfig,
 ): Promise<Response>
 
 export function mv_sublist(
@@ -811,7 +813,7 @@ export function mv_sublist(
 ): Promise<Response>
 
 export function mv_url(
-  params: { id?: string | number; r?: string | number } & RequestBaseConfig,
+  params: { id?: string | number, r?: string | number } & RequestBaseConfig,
 ): Promise<Response>
 
 export function personal_fm(params: RequestBaseConfig): Promise<Response>
@@ -860,11 +862,11 @@ export function playlist_delete(
 ): Promise<Response>
 
 export function playlist_desc_update(
-  params: { id: string | number; desc: string } & RequestBaseConfig,
+  params: { id: string | number, desc: string } & RequestBaseConfig,
 ): Promise<Response>
 
 export function playlist_detail(
-  params: { id: string | number; s?: string | number } & RequestBaseConfig,
+  params: { id: string | number, s?: string | number } & RequestBaseConfig,
 ): Promise<Response>
 
 export function playlist_highquality_tags(
@@ -874,7 +876,7 @@ export function playlist_highquality_tags(
 export function playlist_hot(params: RequestBaseConfig): Promise<Response>
 
 export function playlist_name_update(
-  params: { id: string | number; name: string } & RequestBaseConfig,
+  params: { id: string | number, name: string } & RequestBaseConfig,
 ): Promise<Response>
 
 export function playlist_order_update(
@@ -882,7 +884,7 @@ export function playlist_order_update(
 ): Promise<Response>
 
 export function playlist_subscribe(
-  params: { t: SubAction; id: string | number } & RequestBaseConfig,
+  params: { t: SubAction, id: string | number } & RequestBaseConfig,
 ): Promise<Response>
 
 export function playlist_subscribers(
@@ -890,7 +892,7 @@ export function playlist_subscribers(
 ): Promise<Response>
 
 export function playlist_tags_update(
-  params: { id: string | number; tags: string } & RequestBaseConfig,
+  params: { id: string | number, tags: string } & RequestBaseConfig,
 ): Promise<Response>
 
 export function playlist_tracks(
@@ -983,7 +985,7 @@ export function search(
     keywords: string
     type?: SearchType
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function search_default(params: RequestBaseConfig): Promise<Response>
@@ -993,7 +995,7 @@ export function search_hot(params: RequestBaseConfig): Promise<Response>
 export function search_hot_detail(params: RequestBaseConfig): Promise<Response>
 
 export function search_multimatch(
-  params: { type?: number; keywords: string } & RequestBaseConfig,
+  params: { type?: number, keywords: string } & RequestBaseConfig,
 ): Promise<Response>
 
 export const enum SearchSuggestType {
@@ -1002,7 +1004,7 @@ export const enum SearchSuggestType {
 }
 
 export function search_suggest(
-  params: { keywords: string; type?: SearchSuggestType } & RequestBaseConfig,
+  params: { keywords: string, type?: SearchSuggestType } & RequestBaseConfig,
 ): Promise<Response>
 
 export function send_playlist(
@@ -1014,7 +1016,7 @@ export function send_playlist(
 ): Promise<Response>
 
 export function send_text(
-  params: { msg: string; user_ids: string } & RequestBaseConfig,
+  params: { msg: string, user_ids: string } & RequestBaseConfig,
 ): Promise<Response>
 
 export function setting(params: RequestBaseConfig): Promise<Response>
@@ -1065,7 +1067,7 @@ export function song_detail(
   }>
 >
 
-type SongDetail = {
+interface SongDetail {
   name: string
   id: number
   pst: number
@@ -1114,7 +1116,7 @@ type SongDetail = {
   publishTime: number
 }
 
-type SongDetailArtist = {
+interface SongDetailArtist {
   id: number
   name: string
   tns: unknown[]
@@ -1123,7 +1125,7 @@ type SongDetailArtist = {
 
 type SongDetailFee = 0 | 1 | 4 | 8
 
-type SongDetailAlbum = {
+interface SongDetailAlbum {
   id: number
   name: string
   picUrl: string
@@ -1131,7 +1133,7 @@ type SongDetailAlbum = {
   pic: number
 }
 
-type SongDetailQuality = {
+interface SongDetailQuality {
   br: number
   fid: number
   size: number
@@ -1144,11 +1146,11 @@ type SongDetailCopyright = 0 | 1 | 2
 type SongDetailOriginCoverType = 0 | 1 | 2
 
 export function song_order_update(
-  params: { pid: string | number; ids: string } & RequestBaseConfig,
+  params: { pid: string | number, ids: string } & RequestBaseConfig,
 ): Promise<Response>
 
 export function song_url(
-  params: { id: string | number; br?: string | number } & RequestBaseConfig,
+  params: { id: string | number, br?: string | number } & RequestBaseConfig,
 ): Promise<Response>
 
 export const enum SoundQualityType {
@@ -1162,7 +1164,7 @@ export const enum SoundQualityType {
 }
 
 export function song_url_v1(
-  params: { id: string | number; level: SoundQualityType } & RequestBaseConfig,
+  params: { id: string | number, level: SoundQualityType } & RequestBaseConfig,
 ): Promise<Response>
 
 export function top_album(
@@ -1172,7 +1174,7 @@ export function top_album(
     year?: string
     mouth?: string
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function top_artists(
@@ -1188,8 +1190,8 @@ export function top_mv(
 ): Promise<Response>
 
 export function top_playlist(
-  params: { cat?: string; order?: ListOrder } & MultiPageConfig &
-    RequestBaseConfig,
+  params: { cat?: string, order?: ListOrder } & MultiPageConfig &
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function top_playlist_highquality(
@@ -1283,7 +1285,7 @@ export const enum UserRecordType {
 }
 
 export function user_record(
-  params: { uid: string | number; type?: UserRecordType } & RequestBaseConfig,
+  params: { uid: string | number, type?: UserRecordType } & RequestBaseConfig,
 ): Promise<Response>
 
 export function user_subcount(params: RequestBaseConfig): Promise<Response>
@@ -1312,13 +1314,13 @@ export function video_detail_info(
 ): Promise<Response>
 
 export function video_group(
-  params: { id: string; offset?: string | number } & RequestBaseConfig,
+  params: { id: string, offset?: string | number } & RequestBaseConfig,
 ): Promise<Response>
 
 export function video_group_list(params: RequestBaseConfig): Promise<Response>
 
 export function video_sub(
-  params: { t?: SubAction; id: string } & RequestBaseConfig,
+  params: { t?: SubAction, id: string } & RequestBaseConfig,
 ): Promise<Response>
 
 export function video_timeline_all(
@@ -1330,7 +1332,7 @@ export function video_timeline_recommend(
 ): Promise<Response>
 
 export function video_url(
-  params: { id: string | number; res?: number } & RequestBaseConfig,
+  params: { id: string | number, res?: number } & RequestBaseConfig,
 ): Promise<Response>
 
 export function weblog(
@@ -1345,11 +1347,11 @@ export function playlist_mylike(
 ): Promise<Response>
 
 export function playlist_track_add(
-  params: { pid?: number | string; ids: number | string } & RequestBaseConfig,
+  params: { pid?: number | string, ids: number | string } & RequestBaseConfig,
 ): Promise<Response>
 
 export function playlist_track_delete(
-  params: { pid?: number | string; ids: number | string } & RequestBaseConfig,
+  params: { pid?: number | string, ids: number | string } & RequestBaseConfig,
 ): Promise<Response>
 
 export function comment_new(
@@ -1650,7 +1652,7 @@ export function playlist_track_all(
     id: number | string
     s?: number | string
   } & MultiPageConfig &
-    RequestBaseConfig,
+  RequestBaseConfig,
 ): Promise<Response>
 
 export function artist_video(

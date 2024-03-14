@@ -1,6 +1,6 @@
+const fs = require('node:fs')
+const path = require('node:path')
 const { cloud, login_cellphone } = require('../main')
-const fs = require('fs')
-const path = require('path')
 
 async function main() {
   const result = await login_cellphone({
@@ -16,7 +16,8 @@ async function main() {
       },
       cookie: result.body.cookie,
     })
-  } catch (error) {
+  }
+  catch (error) {
     console.log(error, 'error')
   }
 }

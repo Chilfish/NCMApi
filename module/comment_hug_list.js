@@ -1,4 +1,5 @@
 const { resourceTypeMap } = require('../util/config.json')
+
 module.exports = (query, request) => {
   query.cookie.os = 'ios'
   query.cookie.appver = '8.20.21'
@@ -8,7 +9,7 @@ module.exports = (query, request) => {
     targetUserId: query.uid,
     commentId: query.cid,
     cursor: query.cursor || '-1',
-    threadId: threadId,
+    threadId,
     pageNo: query.page || 1,
     idCursor: query.idCursor || -1,
     pageSize: query.pageSize || 100,

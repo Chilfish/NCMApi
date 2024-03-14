@@ -1,63 +1,64 @@
-function MemoryCache() {
-  this.cache = {}
-  this.size = 0
-}
-
-MemoryCache.prototype.add = function (key, value, time, timeoutCallback) {
-  var old = this.cache[key]
-  var instance = this
-
-  var entry = {
-    value: value,
-    expire: time + Date.now(),
-    timeout: setTimeout(function () {
-      instance.delete(key)
-      return (
-        timeoutCallback &&
-        typeof timeoutCallback === 'function' &&
-        timeoutCallback(value, key)
-      )
-    }, time),
+class MemoryCache {
+  constructor() {
+    this.cache = {}
+    this.size = 0
   }
 
-  this.cache[key] = entry
-  this.size = Object.keys(this.cache).length
+  add(key, value, time, timeoutCallback) {
+    const old = this.cache[key]
+    const instance = this
 
-  return entry
-}
+    const entry = {
+      value,
+      expire: time + Date.now(),
+      timeout: setTimeout(() => {
+        instance.delete(key)
+        return (
+          timeoutCallback
+          && typeof timeoutCallback === 'function'
+          && timeoutCallback(value, key)
+        )
+      }, time),
+    }
 
-MemoryCache.prototype.delete = function (key) {
-  var entry = this.cache[key]
+    this.cache[key] = entry
+    this.size = Object.keys(this.cache).length
 
-  if (entry) {
-    clearTimeout(entry.timeout)
+    return entry
   }
 
-  delete this.cache[key]
+  delete(key) {
+    const entry = this.cache[key]
 
-  this.size = Object.keys(this.cache).length
+    if (entry)
+      clearTimeout(entry.timeout)
 
-  return null
-}
+    delete this.cache[key]
 
-MemoryCache.prototype.get = function (key) {
-  var entry = this.cache[key]
+    this.size = Object.keys(this.cache).length
 
-  return entry
-}
+    return null
+  }
 
-MemoryCache.prototype.getValue = function (key) {
-  var entry = this.get(key)
+  get(key) {
+    const entry = this.cache[key]
 
-  return entry && entry.value
-}
+    return entry
+  }
 
-MemoryCache.prototype.clear = function () {
-  Object.keys(this.cache).forEach(function (key) {
-    this.delete(key)
-  }, this)
+  getValue(key) {
+    const entry = this.get(key)
 
-  return true
+    return entry && entry.value
+  }
+
+  clear() {
+    Object.keys(this.cache).forEach(function (key) {
+      this.delete(key)
+    }, this)
+
+    return true
+  }
 }
 
 module.exports = MemoryCache

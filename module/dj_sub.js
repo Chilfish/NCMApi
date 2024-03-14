@@ -1,7 +1,7 @@
 // 订阅与取消电台
 
 module.exports = (query, request) => {
-  query.t = query.t == 1 ? 'sub' : 'unsub'
+  query.t = query.t === 1 ? 'sub' : 'unsub'
   const data = {
     id: query.rid,
   }

@@ -1,7 +1,7 @@
 // 电台banner
 
 module.exports = (query, request) => {
-  const data = {}
+  // const data = {}
   query.cookie.os = 'pc'
   return request(
     'POST',

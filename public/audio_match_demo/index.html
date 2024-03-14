@@ -89,7 +89,7 @@
     function InitAudioCtx(){    
         // AFP.wasm can't do it with anything other than 8KHz
         audioCtx = new AudioContext({ 'sampleRate': 8000 })
-        if (audioCtx.state == 'suspended')
+        if (audioCtx.state === 'suspended')
             return false
         let audioNode = audioCtx.createMediaElementSource(audio)
         audioCtx.audioWorklet.addModule('rec.js').then(() => {

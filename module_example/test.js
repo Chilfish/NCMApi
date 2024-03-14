@@ -4,6 +4,7 @@ const {
   album_sublist,
   song_url,
 } = require('../main')
+
 async function test() {
   try {
     const result = await login_cellphone({
@@ -24,7 +25,8 @@ async function test() {
       id: 33894312,
     })
     console.log(result4.body)
-  } catch (error) {
+  }
+  catch (error) {
     console.log(error)
   }
 }

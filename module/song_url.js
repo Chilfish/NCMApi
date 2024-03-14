@@ -4,7 +4,7 @@ module.exports = async (query, request) => {
   const ids = String(query.id).split(',')
   const data = {
     ids: JSON.stringify(ids),
-    br: parseInt(query.br || 999000),
+    br: Number.parseInt(query.br || 999000),
   }
   const res = await request(
     'POST',

@@ -7,9 +7,9 @@ module.exports = (query, request) => {
     n: 100000,
     s: query.s || 8,
   }
-  //不放在data里面避免请求带上无用的数据
-  let limit = parseInt(query.limit) || Infinity
-  let offset = parseInt(query.offset) || 0
+  // 不放在data里面避免请求带上无用的数据
+  const limit = Number.parseInt(query.limit) || Number.POSITIVE_INFINITY
+  const offset = Number.parseInt(query.offset) || 0
 
   return request('POST', `https://music.163.com/api/v6/playlist/detail`, data, {
     crypto: 'api',
@@ -17,15 +17,15 @@ module.exports = (query, request) => {
     proxy: query.proxy,
     realIP: query.realIP,
   }).then((res) => {
-    let trackIds = res.body.playlist.trackIds
-    let idsData = {
+    const trackIds = res.body.playlist.trackIds
+    const idsData = {
       c:
-        '[' +
+        `[${
         trackIds
           .slice(offset, offset + limit)
-          .map((item) => '{"id":' + item.id + '}')
-          .join(',') +
-        ']',
+          .map(item => `{"id":${item.id}}`)
+          .join(',')
+        }]`,
     }
 
     return request(

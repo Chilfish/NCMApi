@@ -5,8 +5,8 @@
 /* {"extInfo":"{\"lastRequestTimestamp\":1692358373509,\"lbsInfoList\":[{\"lat\":40.23076381,\"lon\":129.07545186,\"time\":1692358543},{\"lat\":40.23076381,\"lon\":129.07545186,\"time\":1692055283}],\"listenedTs\":false,\"noAidjToAidj\":true}","header":"{}","e_r":true} */
 
 module.exports = (query, request) => {
-  var extInfo = {}
-  if (query.latitude != undefined) {
+  const extInfo = {}
+  if (query.latitude !== undefined) {
     extInfo.lbsInfoList = [
       {
         lat: query.latitude,

@@ -4,7 +4,7 @@ module.exports = (query, request) => {
     id: query.id,
     private_cloud: 'true',
     work_type: 1,
-    order: query.order || 'hot', //hot,time
+    order: query.order || 'hot', // hot,time
     offset: query.offset || 0,
     limit: query.limit || 100,
   }

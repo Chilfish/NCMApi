@@ -2,7 +2,7 @@
 
 module.exports = (query, request) => {
   const data = {
-    ids: '["' + query.id + '"]',
+    ids: `["${query.id}"]`,
     resolution: query.res || 1080,
   }
   return request(

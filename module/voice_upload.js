@@ -1,14 +1,14 @@
 const { default: axios } = require('axios')
-var xml2js = require('xml2js')
+const xml2js = require('xml2js')
 
-var parser = new xml2js.Parser(/* options */)
+const parser = new xml2js.Parser(/* options */)
 function createDupkey() {
   // 格式:3b443c7c-a87f-468d-ba38-46d407aaf23a
-  var s = []
-  var hexDigits = '0123456789abcdef'
-  for (var i = 0; i < 36; i++) {
+  const s = []
+  const hexDigits = '0123456789abcdef'
+  for (let i = 0; i < 36; i++)
     s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1)
-  }
+
   s[14] = '4' // bits 12-15 of the time_hi_and_version field to 0010
   s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1) // bits 6-7 of the clock_seq_hi_and_reserved to 01
   s[8] = s[13] = s[18] = s[23] = '-'
@@ -16,18 +16,19 @@ function createDupkey() {
 }
 module.exports = async (query, request) => {
   let ext = 'mp3'
-  if (query.songFile.name.indexOf('flac') > -1) {
+  if (query.songFile.name.includes('flac'))
     ext = 'flac'
-  }
-  const filename =
-    query.songName ||
-    query.songFile.name
-      .replace('.' + ext, '')
+
+  const filename
+    = query.songName
+    || query.songFile.name
+      .replace(`.${ext}`, '')
       .replace(/\s/g, '')
       .replace(/\./g, '_')
   // query.cookie.os = 'pc'
   // query.cookie.appver = '2.9.7'
   if (!query.songFile) {
+    // eslint-disable-next-line prefer-promise-reject-errors
     return Promise.reject({
       status: 500,
       body: {
@@ -42,8 +43,8 @@ module.exports = async (query, request) => {
     `https://music.163.com/weapi/nos/token/alloc`,
     {
       bucket: 'ymusic',
-      ext: ext,
-      filename: filename,
+      ext,
+      filename,
       local: false,
       nos_product: 0,
       type: 'other',
@@ -101,7 +102,7 @@ module.exports = async (query, request) => {
       voiceData: JSON.stringify([
         {
           name: filename,
-          autoPublish: query.autoPublish == 1 ? true : false,
+          autoPublish: query.autoPublish === 1,
           autoPublishText: query.autoPublishText || '',
           description: query.description,
           voiceListId: query.voiceListId,
@@ -112,7 +113,7 @@ module.exports = async (query, request) => {
           composedSongs: query.composedSongs
             ? query.composedSongs.split(',')
             : [],
-          privacy: query.privacy == 1 ? true : false,
+          privacy: query.privacy === 1,
           publishTime: query.publishTime || 0,
           orderNo: query.orderNo || 1,
         },
@@ -135,7 +136,7 @@ module.exports = async (query, request) => {
       voiceData: JSON.stringify([
         {
           name: filename,
-          autoPublish: query.autoPublish == 1 ? true : false,
+          autoPublish: query.autoPublish === 1,
           autoPublishText: query.autoPublishText || '',
           description: query.description,
           voiceListId: query.voiceListId,
@@ -146,7 +147,7 @@ module.exports = async (query, request) => {
           composedSongs: query.composedSongs
             ? query.composedSongs.split(',')
             : [],
-          privacy: query.privacy == 1 ? true : false,
+          privacy: query.privacy === 1,
           publishTime: query.publishTime || 0,
           orderNo: query.orderNo || 1,
         },

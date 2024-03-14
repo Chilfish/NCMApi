@@ -1,5 +1,5 @@
 // 注册账号
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 
 module.exports = (query, request) => {
   query.cookie.os = 'pc'

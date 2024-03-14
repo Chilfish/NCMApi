@@ -1,6 +1,6 @@
 // 歌手分类
 
-/* 
+/*
     type 取值
     1:男歌手
     2:女歌手
@@ -19,7 +19,7 @@
 
 module.exports = (query, request) => {
   const data = {
-    initial: isNaN(query.initial)
+    initial: Number.isNaN(query.initial)
       ? (query.initial || '').toUpperCase().charCodeAt() || undefined
       : query.initial,
     offset: query.offset || 0,

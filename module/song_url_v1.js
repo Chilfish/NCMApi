@@ -6,13 +6,13 @@ module.exports = (query, request) => {
   query.cookie.os = 'android'
   query.cookie.appver = '8.10.05'
   const data = {
-    ids: '[' + query.id + ']',
+    ids: `[${query.id}]`,
     level: query.level,
     encodeType: 'flac',
   }
-  if (data.level == 'sky') {
+  if (data.level === 'sky')
     data.immerseType = 'c51'
-  }
+
   return request(
     'POST',
     `https://interface.music.163.com/eapi/song/enhance/player/url/v1`,

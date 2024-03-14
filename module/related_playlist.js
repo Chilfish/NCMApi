@@ -13,11 +13,12 @@ module.exports = (query, request) => {
     },
   ).then((response) => {
     try {
-      const pattern =
-        /<div class="cver u-cover u-cover-3">[\s\S]*?<img src="([^"]+)">[\s\S]*?<a class="sname f-fs1 s-fc0" href="([^"]+)"[^>]*>([^<]+?)<\/a>[\s\S]*?<a class="nm nm f-thide s-fc3" href="([^"]+)"[^>]*>([^<]+?)<\/a>/g
-      let result,
-        playlists = []
-      while ((result = pattern.exec(response.body)) != null) {
+      const pattern
+        = /<div class="cver u-cover u-cover-3">[\s\S]*?<img src="([^"]+)">[\s\S]*?<a class="sname f-fs1 s-fc0" href="([^"]+)"[^>]*>([^<]+?)<\/a>[\s\S]*?<a class="nm nm f-thide s-fc3" href="([^"]+)"[^>]*>([^<]+?)<\/a>/g
+      let result
+      const playlists = []
+      while (result !== null) {
+        result = pattern.exec(response.body)
         playlists.push({
           creator: {
             userId: result[4].slice('/user/home?id='.length),
@@ -28,9 +29,10 @@ module.exports = (query, request) => {
           id: result[2].slice('/playlist?id='.length),
         })
       }
-      response.body = { code: 200, playlists: playlists }
+      response.body = { code: 200, playlists }
       return response
-    } catch (err) {
+    }
+    catch (err) {
       response.status = 500
       response.body = { code: 500, msg: err.stack }
       return Promise.reject(response)

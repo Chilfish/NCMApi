@@ -1,9 +1,9 @@
-const fs = require('fs')
-const path = require('path')
+const fs = require('node:fs')
+const path = require('node:path')
+const tmpPath = require('node:os').tmpdir()
 const { register_anonimous } = require('./main')
 const { cookieToJson } = require('./util/index')
 
-const tmpPath = require('os').tmpdir()
 async function generateConfig() {
   try {
     const res = await register_anonimous()
@@ -16,7 +16,8 @@ async function generateConfig() {
         'utf-8',
       )
     }
-  } catch (error) {
+  }
+  catch (error) {
     console.log(error)
   }
 }

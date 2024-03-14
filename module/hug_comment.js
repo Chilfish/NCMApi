@@ -1,4 +1,5 @@
 const { resourceTypeMap } = require('../util/config.json')
+
 module.exports = (query, request) => {
   query.cookie.os = 'ios'
   query.cookie.appver = '8.20.21'
@@ -7,7 +8,7 @@ module.exports = (query, request) => {
   const data = {
     targetUserId: query.uid,
     commentId: query.cid,
-    threadId: threadId,
+    threadId,
   }
   return request(
     'POST',

@@ -1,4 +1,5 @@
 const { default: axios } = require('axios')
+
 module.exports = async (query, request) => {
   const data = {
     bucket: 'yyimgs',
@@ -41,7 +42,7 @@ module.exports = async (query, request) => {
     // ...res.body.result,
     // ...res2.data,
     // ...res3.body,
-    url_pre: 'https://p1.music.126.net/' + res.body.result.objectKey,
+    url_pre: `https://p1.music.126.net/${res.body.result.objectKey}`,
     url: res3.body.url,
     imgId: res3.body.id,
   }

@@ -1,26 +1,27 @@
 const mm = require('music-metadata')
-const uploadPlugin = require('../plugins/songUpload')
 const md5 = require('md5')
+const uploadPlugin = require('../plugins/songUpload')
+
 module.exports = async (query, request) => {
   let ext = 'mp3'
-  if (query.songFile.name.indexOf('flac') > -1) {
+  if (query.songFile.name.includes('flac'))
     ext = 'flac'
-  }
+
   const filename = query.songFile.name
-    .replace('.' + ext, '')
+    .replace(`.${ext}`, '')
     .replace(/\s/g, '')
     .replace(/\./g, '_')
   query.cookie.os = 'pc'
   query.cookie.appver = '2.9.7'
   const bitrate = 999000
   if (!query.songFile) {
-    return Promise.reject({
+    return Promise.reject(new Error(JSON.stringify({
       status: 500,
       body: {
         msg: '请上传音乐文件',
         code: 500,
       },
-    })
+    })))
   }
   if (!query.songFile.md5) {
     // 命令行上传没有md5和size信息,需要填充
@@ -55,15 +56,15 @@ module.exports = async (query, request) => {
     )
     const info = metadata.common
 
-    if (info.title) {
+    if (info.title)
       songName = info.title
-    }
-    if (info.album) {
+
+    if (info.album)
       album = info.album
-    }
-    if (info.artist) {
+
+    if (info.artist)
       artist = info.artist
-    }
+
     // if (metadata.native.ID3v1) {
     //   metadata.native.ID3v1.forEach((item) => {
     //     // console.log(item.id, item.value)
@@ -88,7 +89,8 @@ module.exports = async (query, request) => {
     //   album,
     //   songName,
     // })
-  } catch (error) {
+  }
+  catch (error) {
     console.log(error)
   }
   const tokenRes = await request(
@@ -96,8 +98,8 @@ module.exports = async (query, request) => {
     `https://music.163.com/weapi/nos/token/alloc`,
     {
       bucket: '',
-      ext: ext,
-      filename: filename,
+      ext,
+      filename,
       local: false,
       nos_product: 3,
       type: 'audio',
@@ -107,7 +109,7 @@ module.exports = async (query, request) => {
   )
 
   if (res.body.needUpload) {
-    const uploadInfo = await uploadPlugin(query, request)
+    const _uploadInfo = await uploadPlugin(query, request)
     // console.log('uploadInfo', uploadInfo.body.result.resourceId)
   }
   // console.log(tokenRes.body.result)

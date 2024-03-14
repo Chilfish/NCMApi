@@ -1,4 +1,4 @@
-//声音搜索
+// 声音搜索
 module.exports = (query, request) => {
   const data = {
     limit: query.limit || '200',

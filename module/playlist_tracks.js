@@ -28,7 +28,8 @@ module.exports = async (query, request) => {
         ...res,
       },
     }
-  } catch (error) {
+  }
+  catch (error) {
     if (error.body.code === 512) {
       return request(
         'POST',
@@ -46,7 +47,8 @@ module.exports = async (query, request) => {
           realIP: query.realIP,
         },
       )
-    } else {
+    }
+    else {
       return {
         status: 200,
         body: error.body,

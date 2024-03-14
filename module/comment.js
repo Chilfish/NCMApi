@@ -13,12 +13,16 @@ module.exports = (query, request) => {
     threadId: query.type + query.id,
   }
 
-  if (query.type == 'A_EV_2_') {
+  if (query.type === 'A_EV_2_')
     data.threadId = query.threadId
+
+  if (query.t === 'add') {
+    data.content = query.content
   }
-  if (query.t == 'add') data.content = query.content
-  else if (query.t == 'delete') data.commentId = query.commentId
-  else if (query.t == 'reply') {
+  else if (query.t === 'delete') {
+    data.commentId = query.commentId
+  }
+  else if (query.t === 'reply') {
     data.commentId = query.commentId
     data.content = query.content
   }

@@ -1,6 +1,6 @@
 // 邮箱登录
 
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 
 module.exports = async (query, request) => {
   query.cookie.os = 'ios'
@@ -8,8 +8,8 @@ module.exports = async (query, request) => {
   const data = {
     username: query.email,
     password:
-      query.md5_password ||
-      crypto.createHash('md5').update(query.password).digest('hex'),
+      query.md5_password
+      || crypto.createHash('md5').update(query.password).digest('hex'),
     rememberLogin: 'true',
   }
   let result = await request('POST', `https://music.163.com/api/login`, data, {

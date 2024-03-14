@@ -1,25 +1,25 @@
-const fs = require('fs')
-const path = require('path')
-const tmpPath = require('os').tmpdir()
+const fs = require('node:fs')
+const path = require('node:path')
+const tmpPath = require('node:os').tmpdir()
 const { cookieToJson } = require('./util')
 
-if (!fs.existsSync(path.resolve(tmpPath, 'anonymous_token'))) {
+if (!fs.existsSync(path.resolve(tmpPath, 'anonymous_token')))
   fs.writeFileSync(path.resolve(tmpPath, 'anonymous_token'), '', 'utf-8')
-}
 
 let firstRun = true
 /** @type {Record<string, any>} */
-let obj = {}
+const obj = {}
 fs.readdirSync(path.join(__dirname, 'module'))
   .reverse()
   .forEach((file) => {
-    if (!file.endsWith('.js')) return
-    let fileModule = require(path.join(__dirname, 'module', file))
-    let fn = file.split('.').shift() || ''
+    if (!file.endsWith('.js'))
+      return
+    const fileModule = require(path.join(__dirname, 'module', file))
+    const fn = file.split('.').shift() || ''
     obj[fn] = function (data = {}) {
-      if (typeof data.cookie === 'string') {
+      if (typeof data.cookie === 'string')
         data.cookie = cookieToJson(data.cookie)
-      }
+
       return fileModule(
         {
           ...data,

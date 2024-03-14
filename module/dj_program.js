@@ -1,5 +1,6 @@
 // 电台节目列表
 const { toBoolean } = require('../util')
+
 module.exports = (query, request) => {
   const data = {
     radioId: query.rid,

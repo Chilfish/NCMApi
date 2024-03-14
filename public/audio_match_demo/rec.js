@@ -20,10 +20,11 @@ class TimedRecorder extends AudioWorkletProcessor {
       }
     }
   }
+
   process(inputs) {
     // Only take care of channel 0 (Left)
     if (this.recording) {
-      let channelL = inputs[0][0]
+      const channelL = inputs[0][0]
       this.port.postMessage({
         message: 'bufferhealth',
         health: this.buf_index / this.max_length,
@@ -37,7 +38,8 @@ class TimedRecorder extends AudioWorkletProcessor {
           message: 'finished',
           recording: this.recbuffer,
         })
-      } else {
+      }
+      else {
         this.recbuffer.set(channelL, this.buf_index)
         this.buf_index += channelL.length
       }

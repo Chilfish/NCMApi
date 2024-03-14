@@ -4,7 +4,7 @@ module.exports = (query, request) => {
     limit: query.limit || 10,
     offset: query.offset || 0,
     total: true,
-    area: query.area || 'Z_H', //Z_H:华语,E_A:欧美,KR:韩国,JP:日本
+    area: query.area || 'Z_H', // Z_H:华语,E_A:欧美,KR:韩国,JP:日本
   }
   return request(
     'POST',

@@ -1,7 +1,7 @@
 // 收藏与取消收藏歌单
 
 module.exports = (query, request) => {
-  query.t = query.t == 1 ? 'subscribe' : 'unsubscribe'
+  query.t = query.t === 1 ? 'subscribe' : 'unsubscribe'
   const data = {
     id: query.id,
   }

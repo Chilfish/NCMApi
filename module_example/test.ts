@@ -1,4 +1,5 @@
 import { banner, lyric } from 'NeteaseCloudMusicApi'
+
 banner({ type: 0 }).then((res) => {
   console.log(res)
 })

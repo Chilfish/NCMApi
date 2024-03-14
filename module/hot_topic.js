@@ -1,4 +1,4 @@
-//热门话题
+// 热门话题
 
 module.exports = (query, request) => {
   const data = {

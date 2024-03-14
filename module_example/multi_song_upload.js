@@ -1,7 +1,7 @@
-const { cloud, login_cellphone } = require('../main')
-const fs = require('fs')
-const path = require('path')
+const fs = require('node:fs')
+const path = require('node:path')
 const yargs = require('yargs')
+const { cloud, login_cellphone } = require('../main')
 
 const MUSIC_FILE_EXTENSIONS = new Set(['.mp3', '.flac'])
 
@@ -9,13 +9,13 @@ function getAllMusicFiles(dir, arrayOfFiles) {
   arrayOfFiles = arrayOfFiles || []
 
   fs.readdirSync(dir).forEach((file) => {
-    let fullPath = path.join(dir, file)
+    const fullPath = path.join(dir, file)
     if (fs.lstatSync(fullPath).isDirectory()) {
       getAllMusicFiles(fullPath, arrayOfFiles)
-    } else {
-      if (MUSIC_FILE_EXTENSIONS.has(path.extname(fullPath))) {
+    }
+    else {
+      if (MUSIC_FILE_EXTENSIONS.has(path.extname(fullPath)))
         arrayOfFiles.push(fullPath)
-      }
     }
   })
 
@@ -23,10 +23,10 @@ function getAllMusicFiles(dir, arrayOfFiles) {
 }
 
 async function uploadArrayOfFile(token, arrayOfFiles) {
-  let failedFiles = []
+  const failedFiles = []
   let failed = 0
   const fileCount = arrayOfFiles.length
-  for (let k in arrayOfFiles) {
+  for (const k in arrayOfFiles) {
     const file = arrayOfFiles[k]
     try {
       await cloud({
@@ -36,7 +36,8 @@ async function uploadArrayOfFile(token, arrayOfFiles) {
         },
         cookie: token.body.cookie,
       })
-    } catch (error) {
+    }
+    catch (error) {
       console.log(error)
       failed += 1
       failedFiles.push(file)
@@ -97,8 +98,7 @@ async function main() {
   console.log(
     `Failed to upload ${res.failed} songs, you can reupload the files below`,
   )
-  for (let k in res.failedFiles) {
+  for (const k in res.failedFiles)
     console.log(res.failedFiles[k])
-  }
 }
 main()

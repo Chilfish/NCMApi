@@ -1,5 +1,5 @@
-const fsPromises = require('fs/promises')
-const path = require('path')
+const fsPromises = require('node:fs/promises')
+const path = require('node:path')
 const server = require('../server')
 
 const exportFile = path.join(__dirname, 'moddef.json')

@@ -1,11 +1,12 @@
 const { default: axios } = require('axios')
+
 module.exports = async (query, request) => {
   let ext = 'mp3'
-  if (query.songFile.name.indexOf('flac') > -1) {
+  if (query.songFile.name.includes('flac'))
     ext = 'flac'
-  }
+
   const filename = query.songFile.name
-    .replace('.' + ext, '')
+    .replace(`.${ext}`, '')
     .replace(/\s/g, '')
     .replace(/\./g, '_')
   const bucket = 'jd-musicrep-privatecloud-audio-public'
@@ -14,9 +15,9 @@ module.exports = async (query, request) => {
     'POST',
     `https://music.163.com/weapi/nos/token/alloc`,
     {
-      bucket: bucket,
-      ext: ext,
-      filename: filename,
+      bucket,
+      ext,
+      filename,
       local: false,
       nos_product: 3,
       type: 'audio',
@@ -44,10 +45,11 @@ module.exports = async (query, request) => {
         'Content-Length': String(query.songFile.size),
       },
       data: query.songFile.data,
-      maxContentLength: Infinity,
-      maxBodyLength: Infinity,
+      maxContentLength: Number.POSITIVE_INFINITY,
+      maxBodyLength: Number.POSITIVE_INFINITY,
     })
-  } catch (error) {
+  }
+  catch (error) {
     console.log('error', error.response)
     throw error.response
   }

@@ -1,8 +1,8 @@
 // 首页轮播图
 
 module.exports = (query, request) => {
-  const type =
-    {
+  const type
+    = {
       0: 'pc',
       1: 'android',
       2: 'iphone',

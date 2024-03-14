@@ -1,7 +1,7 @@
 // 搜索
 
 module.exports = (query, request) => {
-  if (query.type && query.type == '2000') {
+  if (query.type && query.type === '2000') {
     const data = {
       keyword: query.keywords,
       scene: 'normal',

@@ -3,7 +3,7 @@
 module.exports = (query, request) => {
   const data = {
     id: query.id,
-    br: parseInt(query.br || 999000),
+    br: Number.parseInt(query.br || 999000),
   }
   return request(
     'POST',

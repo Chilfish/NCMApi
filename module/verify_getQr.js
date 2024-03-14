@@ -1,4 +1,5 @@
 const QRCode = require('qrcode')
+
 module.exports = async (query, request) => {
   const data = {
     verifyConfigId: query.vid,

@@ -24,7 +24,8 @@ module.exports = async (query, request) => {
       cookie: result.cookie,
     }
     return result
-  } catch (error) {
+  }
+  catch (error) {
     return {
       status: 200,
       body: {},

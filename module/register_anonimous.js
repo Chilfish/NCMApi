@@ -5,8 +5,8 @@ const ID_XOR_KEY_1 = '3go8&$833h0k(2)2'
 function cloudmusic_dll_encode_id(some_id) {
   let xoredString = ''
   for (let i = 0; i < some_id.length; i++) {
-    const charCode =
-      some_id.charCodeAt(i) ^ ID_XOR_KEY_1.charCodeAt(i % ID_XOR_KEY_1.length)
+    const charCode
+      = some_id.charCodeAt(i) ^ ID_XOR_KEY_1.charCodeAt(i % ID_XOR_KEY_1.length)
     xoredString += String.fromCharCode(charCode)
   }
   const wordArray = CryptoJS.enc.Utf8.parse(xoredString)

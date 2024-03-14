@@ -1,12 +1,13 @@
-const fs = require('fs')
-const path = require('path')
-const tmpPath = require('os').tmpdir()
+const fs = require('node:fs')
+const path = require('node:path')
+const tmpPath = require('node:os').tmpdir()
 /** @type {import("express").Express & serverMod.ExpressExtension} */
 let app
-if (!fs.existsSync(path.resolve(tmpPath, 'anonymous_token'))) {
+if (!fs.existsSync(path.resolve(tmpPath, 'anonymous_token')))
   fs.writeFileSync(path.resolve(tmpPath, 'anonymous_token'), '', 'utf-8')
-}
+
 const serverMod = require('./server')
+
 before(async () => {
   app = await serverMod.serveNcmApi({})
 

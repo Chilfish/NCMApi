@@ -1,4 +1,5 @@
 const uploadPlugin = require('../plugins/upload')
+
 module.exports = async (query, request) => {
   if (!query.imgFile) {
     return {

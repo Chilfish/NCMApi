@@ -1,4 +1,5 @@
 const pkg = require('../package.json')
+
 module.exports = (query, request) => {
   return new Promise((resolve) => {
     return resolve({

@@ -5,9 +5,8 @@ module.exports = (query, request) => {
     e_r: true,
   }
   Object.keys(query).forEach((i) => {
-    if (/^\/api\//.test(i)) {
+    if (/^\/api\//.test(i))
       data[i] = query[i]
-    }
   })
   return request('POST', `https://music.163.com/eapi/batch`, data, {
     crypto: 'eapi',
