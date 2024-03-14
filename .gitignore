@@ -2,10 +2,8 @@
 node_modules
 *.log
 .idea
-.vscode
 .history
 examples/moddef.json
 bin
 anonymous_token
-
 .vercel

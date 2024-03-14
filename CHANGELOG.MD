@@ -178,18 +178,18 @@
 - 修复请求接口提示需要验证的问题,增加游客登录接口,服务启动更新游客cookie
 
 ### 4.6.0 | 2022.05.29
-- 修复请求接口提示需要验证的问题 [#1541](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1541) 
+- 修复请求接口提示需要验证的问题 [#1541](https://github.com/Chilfish/NCMApi/issues/1541) 
 
 ### 4.5.14 | 2022.05.06
-- 修复获取歌单所有歌曲接口分页问题 [#1524](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1524)
+- 修复获取歌单所有歌曲接口分页问题 [#1524](https://github.com/Chilfish/NCMApi/pull/1524)
 
-- 增加支持罗马音歌词返回 [#1523](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1523)
+- 增加支持罗马音歌词返回 [#1523](https://github.com/Chilfish/NCMApi/pull/1523)
 
 ### 4.5.12 | 2022.04.15
-- 新增`黑胶时光机`接口 [#1511](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1511)
+- 新增`黑胶时光机`接口 [#1511](https://github.com/Chilfish/NCMApi/pull/1511)
 
 ### 4.5.11 | 2022.04.06
-- 修复云盘接口mimetype获取错误 [#1503](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1503)
+- 修复云盘接口mimetype获取错误 [#1503](https://github.com/Chilfish/NCMApi/pull/1503)
 
 ### 4.5.10 | 2022.03.28
 - 修复了若干问题
@@ -202,7 +202,7 @@
 - 新增 `/inner/version` 接口，用于获取当前版本号
 
 ### 4.5.8 | 2022.03.05
-- 新增歌手粉丝数量接口[#1485](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1485)
+- 新增歌手粉丝数量接口[#1485](https://github.com/Chilfish/NCMApi/issues/1485)
 
 - 新增音乐人任务(新)接口
 
@@ -212,7 +212,7 @@
 - 歌单封面上传接口缺失参数时返回状态码修正
 
 ### 4.5.6 | 2022.02.09
-- 新增重复昵称检测接口 [#1469](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1469)
+- 新增重复昵称检测接口 [#1469](https://github.com/Chilfish/NCMApi/issues/1469)
 
 ### 4.5.5 | 2022.02.09
 - 搜索接口支持搜索声音
@@ -221,52 +221,52 @@
 - 修复云盘上传无法获取到文件的问题
 
 ### 4.5.3 | 2022.02.04
-- 增加签到进度接口 [#1462](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1462)
+- 增加签到进度接口 [#1462](https://github.com/Chilfish/NCMApi/pull/1462)
 
 ### 4.5.2 | 2022.01.28
-- 入口文件优化 [#1457](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1457)
+- 入口文件优化 [#1457](https://github.com/Chilfish/NCMApi/pull/1457)
 
 ### 4.5.0 | 2022.01.27
 
-- app.js 重构[#1453](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1453)
+- app.js 重构[#1453](https://github.com/Chilfish/NCMApi/pull/1453)
 
 - 修复 pkg 打包问题
 
 ### 4.3.0 | 2022.01.22
 
-- fix: 发送/删除评论、点赞失败 [#1446](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1446)
+- fix: 发送/删除评论、点赞失败 [#1446](https://github.com/Chilfish/NCMApi/pull/1446)
 
-- 增加二进制文件 node 标识 [#1440](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1440)
+- 增加二进制文件 node 标识 [#1440](https://github.com/Chilfish/NCMApi/pull/1440)
 
-- 获取歌单所有歌曲增加 offset 偏移量设置[#1435](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1435)
+- 获取歌单所有歌曲增加 offset 偏移量设置[#1435](https://github.com/Chilfish/NCMApi/pull/1435)
 
 ### 4.2.0 | 2021.11.23
 
-- 合并相同接口(发送文本动态,使用`/share/resource`接口代替)；增加歌手视频接口；增加创建共享歌单的用法 [#1402](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1402)
+- 合并相同接口(发送文本动态,使用`/share/resource`接口代替)；增加歌手视频接口；增加创建共享歌单的用法 [#1402](https://github.com/Chilfish/NCMApi/pull/1402)
 
 - 新增最近播放-歌曲,最近播放-视频,最近播放-声音,最近播放-歌单,最近播放-专辑,最近播放-播客等接口
 
 ### 4.1.1 | 2021.11.20
 
-- 添加乐签信息接口 [#1365](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1365)
+- 添加乐签信息接口 [#1365](https://github.com/Chilfish/NCMApi/issues/1365)
 
 ### 4.1.0 | 2021.11.20
 
-- 修复新版评论返回参数错误问题 [#1393](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1393) [#1377](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1377)
+- 修复新版评论返回参数错误问题 [#1393](https://github.com/Chilfish/NCMApi/issues/1393) [#1377](https://github.com/Chilfish/NCMApi/issues/1377)
 
-- 新增获取歌单所有歌曲的 API [#1397](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1397)
+- 新增获取歌单所有歌曲的 API [#1397](https://github.com/Chilfish/NCMApi/pull/1397)
 
-- 新增发送文本动态接口, 获取客户端歌曲下载链接 url 接口 [#1391](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1391)
+- 新增发送文本动态接口, 获取客户端歌曲下载链接 url 接口 [#1391](https://github.com/Chilfish/NCMApi/pull/1391)
 
 ### 4.0.23 | 2021.9.15
 
-- 修复文件上传设置问题 [#1355](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1355)
+- 修复文件上传设置问题 [#1355](https://github.com/Chilfish/NCMApi/pull/1355)
 
-- 修复 interface 不完整问题 [#1356](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1356)
+- 修复 interface 不完整问题 [#1356](https://github.com/Chilfish/NCMApi/issues/1356)
 
 ### 4.0.22 | 2021.9.08
 
-- 修复 URI malformed 错误 [#1347](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1347)
+- 修复 URI malformed 错误 [#1347](https://github.com/Chilfish/NCMApi/issues/1347)
 
 ### 4.0.21 | 2021.9.04
 
@@ -276,11 +276,11 @@
 
 - 修复代理设置问题 #1343
 
-- 新增歌曲相关视频接口(歌曲相关视频 公开隐私歌单) [#1337](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1337)
+- 新增歌曲相关视频接口(歌曲相关视频 公开隐私歌单) [#1337](https://github.com/Chilfish/NCMApi/pull/1337)
 
 ### 4.0.20 | 2021.8.20
 
-- 手机登录增加验证码登录方式 [#1328](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1328)
+- 手机登录增加验证码登录方式 [#1328](https://github.com/Chilfish/NCMApi/issues/1328)
 
 ### 4.0.19 | 2021.8.10
 
@@ -292,37 +292,37 @@
 
 ### 4.0.16 | 2021.6.2
 
-- 新增歌手粉丝,数字专辑详情,数字专辑销量,音乐人数据概况,音乐人播放趋势,音乐人任务,账号云豆数,领取云豆等接口 [#1252](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1252)
+- 新增歌手粉丝,数字专辑详情,数字专辑销量,音乐人数据概况,音乐人播放趋势,音乐人任务,账号云豆数,领取云豆等接口 [#1252](https://github.com/Chilfish/NCMApi/pull/1252)
 
 ### 4.0.15 | 2021.5.29
 
-- 新增已购单曲,获取 mlog 播放地址,将 mlog id 转为视频 id,vip 成长值,vip 成长值获取记录,vip 任务,领取 vip 成长值等接口 [#1248](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1248)
+- 新增已购单曲,获取 mlog 播放地址,将 mlog id 转为视频 id,vip 成长值,vip 成长值获取记录,vip 任务,领取 vip 成长值等接口 [#1248](https://github.com/Chilfish/NCMApi/pull/1248)
 
 ### 4.0.14 | 2021.5.28
 
-- 增加云贝推歌接口,云贝推歌历史记录接口 [#1246](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1246)
+- 增加云贝推歌接口,云贝推歌历史记录接口 [#1246](https://github.com/Chilfish/NCMApi/pull/1246)
 
 ### 4.0.13 | 2021.5.24
 
-- 修复解析问题，改善 Docker 支持 [#1241](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/1241)
+- 修复解析问题，改善 Docker 支持 [#1241](https://github.com/Chilfish/NCMApi/pull/1241)
 
 ### 4.0.12 | 2021.5.1
 
-- 首页-发现接口增加 cursor 参数,refresh 默认设为 false [#1217](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1217)
+- 首页-发现接口增加 cursor 参数,refresh 默认设为 false [#1217](https://github.com/Chilfish/NCMApi/issues/1217)
 
 - 更新`song/detail` 接口
 
 ### 4.0.11 | 2021.4.26
 
-- 新增云盘歌曲信息匹配纠正接口 [#1212](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1212)
+- 新增云盘歌曲信息匹配纠正接口 [#1212](https://github.com/Chilfish/NCMApi/issues/1212)
 
 ### 4.0.10 | 2021.4.09
 
-- 新增用户历史评论接口 [#1197](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1197)
+- 新增用户历史评论接口 [#1197](https://github.com/Chilfish/NCMApi/issues/1197)
 
 ### 4.0.9 | 2021.3.13
 
-- 新增一起听状态接口 [#1170](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1170)
+- 新增一起听状态接口 [#1170](https://github.com/Chilfish/NCMApi/issues/1170)
 
 ### 4.0.8 | 2021.2.27
 
@@ -330,42 +330,42 @@
 
 ### 4.0.7 | 2021.2.27
 
-- 更新红心接口,修复红心接口 460 错误问题 [#1151](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1151)
+- 更新红心接口,修复红心接口 460 错误问题 [#1151](https://github.com/Chilfish/NCMApi/issues/1151)
 
 - 更新发送验证码接口
 
-- 注册接口添加 countrycode 参数 [#1152](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1152)
+- 注册接口添加 countrycode 参数 [#1152](https://github.com/Chilfish/NCMApi/issues/1152)
 
-- 新增绑定手机接口 [#1152](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1152)
+- 新增绑定手机接口 [#1152](https://github.com/Chilfish/NCMApi/issues/1152)
 
-- 更新 song/detail 接口 [#1143](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1143)
+- 更新 song/detail 接口 [#1143](https://github.com/Chilfish/NCMApi/issues/1143)
 
-- 用户粉丝接口修改分页参数 [#1161](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1161)
+- 用户粉丝接口修改分页参数 [#1161](https://github.com/Chilfish/NCMApi/issues/1161)
 
 ### 4.0.6 | 2021.2.20
 
-- 修复 eapi 接口无法正确解密 response 的问题 [#1138](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1138)
+- 修复 eapi 接口无法正确解密 response 的问题 [#1138](https://github.com/Chilfish/NCMApi/issues/1138)
 
 ### 4.0.5 | 2021.2.19
 
-- 修复红心接口默认不红心的问题 [#1126](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1126)
+- 修复红心接口默认不红心的问题 [#1126](https://github.com/Chilfish/NCMApi/issues/1126)
 
 ### 4.0.4 | 2021.2.18
 
-- 移除云村热评接口(官方下架) [#1111](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1111)
+- 移除云村热评接口(官方下架) [#1111](https://github.com/Chilfish/NCMApi/issues/1111)
 - 更新 app version
 
 ### 4.0.3 | 2021.1.28
 
-- 修复云盘接口中文音乐信息乱码的问题 [#1108](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1108)
+- 修复云盘接口中文音乐信息乱码的问题 [#1108](https://github.com/Chilfish/NCMApi/issues/1108)
 
 ### 4.0.2 | 2021.1.18
 
-- 修复未绑定手机号对歌单添加或删除歌曲无响应的问题 [#1099](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1099)
+- 修复未绑定手机号对歌单添加或删除歌曲无响应的问题 [#1099](https://github.com/Chilfish/NCMApi/issues/1099)
 
 ### 4.0.1 | 2021.1.09
 
-- 新增歌单详情动态接口 [#1088](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1088)
+- 新增歌单详情动态接口 [#1088](https://github.com/Chilfish/NCMApi/issues/1088)
 
 ### 4.0.0 | 2021.1.03
 
@@ -377,27 +377,27 @@
 
 ### 3.47.5 | 2020.12.20
 
-- 更新 appver [#1060](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1060)
+- 更新 appver [#1060](https://github.com/Chilfish/NCMApi/issues/1060)
 
 ### 3.47.4 | 2020.12.03
 
-- 修复收藏的专栏接口无法调用的问题 [#1042](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1042)
+- 修复收藏的专栏接口无法调用的问题 [#1042](https://github.com/Chilfish/NCMApi/issues/1042)
 
 ### 3.47.3 | 2020.11.22
 
-- 新增歌手详情接口 [#1035](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1035)
+- 新增歌手详情接口 [#1035](https://github.com/Chilfish/NCMApi/issues/1035)
 
 ### 3.47.2 | 2020.11.15
 
-- 新增关注歌手新歌/新 MV 接口 [#1028](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1028)
+- 新增关注歌手新歌/新 MV 接口 [#1028](https://github.com/Chilfish/NCMApi/issues/1028)
 
 ### 3.47.1 | 2020.11.14
 
-- 修复使用 post 请求取消喜欢音乐会失败的问题 [#1024](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1024)
+- 修复使用 post 请求取消喜欢音乐会失败的问题 [#1024](https://github.com/Chilfish/NCMApi/issues/1024)
 
-- 新增抱一抱评论和评论抱一抱列表接口 [#1016](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1016)
+- 新增抱一抱评论和评论抱一抱列表接口 [#1016](https://github.com/Chilfish/NCMApi/issues/1016)
 
-- 新增收藏的专栏接口[#1026](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1026)
+- 新增收藏的专栏接口[#1026](https://github.com/Chilfish/NCMApi/issues/1026)
 
 ### 3.46.1 | 2020.11.7
 
@@ -405,19 +405,19 @@
 
 ### 3.46.0 | 2020.11.7
 
-- 添加私信音乐接口 [#1016](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1016)
+- 添加私信音乐接口 [#1016](https://github.com/Chilfish/NCMApi/issues/1016)
 
 - 添加最近联系人接口
 
-- 修复用户动态数量不准确问题 [#1010](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1010)
+- 修复用户动态数量不准确问题 [#1010](https://github.com/Chilfish/NCMApi/issues/1010)
 
-- 修复 cloudsearch 接口分页问题 [#1015](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1015)
+- 修复 cloudsearch 接口分页问题 [#1015](https://github.com/Chilfish/NCMApi/issues/1015)
 
 ### 3.45.3 | 2020.11.1
 
-- `相似歌手`,`首页-发现-圆形图标入口列表`接口增加匿名 token[#877](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/877) [#988](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/988)
+- `相似歌手`,`首页-发现-圆形图标入口列表`接口增加匿名 token[#877](https://github.com/Chilfish/NCMApi/issues/877) [#988](https://github.com/Chilfish/NCMApi/issues/988)
 
-- 修复`音乐 url`接口 POST 方式手动传入 cookie 报错问题 [#1005](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/1005)
+- 修复`音乐 url`接口 POST 方式手动传入 cookie 报错问题 [#1005](https://github.com/Chilfish/NCMApi/issues/1005)
 
 ### 3.45.2 | 2020.10.26
 
@@ -425,11 +425,11 @@
 
 ### 3.45.1 | 2020.10.25
 
-- 修复代理配置失效的问题 [#992](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/992)
+- 修复代理配置失效的问题 [#992](https://github.com/Chilfish/NCMApi/issues/992)
 
-- 修复新碟上架不返回周数据的问题,修复推荐新音乐接口返回数量问题,并添加 limit 参数支持 [#981](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/981)
+- 修复新碟上架不返回周数据的问题,修复推荐新音乐接口返回数量问题,并添加 limit 参数支持 [#981](https://github.com/Chilfish/NCMApi/issues/981)
 
-- 添加`云贝`相关接口 [#985](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/985)
+- 添加`云贝`相关接口 [#985](https://github.com/Chilfish/NCMApi/issues/985)
 
 - 添加`用户账号信息`接口
 
@@ -437,7 +437,7 @@
 
 ### 3.44.0 | 2020.10.17
 
-- 更新`电台详情`,`电台节目详情`接口 [#977](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/977)
+- 更新`电台详情`,`电台节目详情`接口 [#977](https://github.com/Chilfish/NCMApi/issues/977)
 
 #### Breaking change
 
@@ -445,7 +445,7 @@
 
 ### 3.43.0 | 2020.10.16
 
-- 新增`电台订阅者列表`接口 [#971](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/971)
+- 新增`电台订阅者列表`接口 [#971](https://github.com/Chilfish/NCMApi/issues/971)
 
 ### 3.42.4 | 2020.10.07
 
@@ -467,40 +467,40 @@
 
 ### 3.41.2 | 2020.09.20
 
-- 更新`获取音乐 url`接口,未登录状态返回试听片段 [#897](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/897)
+- 更新`获取音乐 url`接口,未登录状态返回试听片段 [#897](https://github.com/Chilfish/NCMApi/issues/897)
 
 ### 3.41.1 | 2020.09.19
 
-- 新增`电台个性推荐接口` [#824](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/824)
+- 新增`电台个性推荐接口` [#824](https://github.com/Chilfish/NCMApi/issues/824)
 
 ### 3.41.0 | 2020.09.19
 
-- 新增`精品歌单标签列表`接口 [#921](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/921)
+- 新增`精品歌单标签列表`接口 [#921](https://github.com/Chilfish/NCMApi/issues/921)
 
-- 新增`用户等级信息`接口 [#929](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/929)
+- 新增`用户等级信息`接口 [#929](https://github.com/Chilfish/NCMApi/issues/929)
 
 - 增加新接口的 d.ts 文件,修复登录接口的 d.ts 的 countrycode 为非可选属性的错误
 
 ### 3.40.1 | 2020.09.13
 
-- 更新 TypeScript 声明 [#928](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/928)
+- 更新 TypeScript 声明 [#928](https://github.com/Chilfish/NCMApi/pull/928)
 
 ### 3.40.0 | 2020.09.12
 
-- 新增 TypeScript 声明文件 [#908](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/908)
-- 更改随机 UA 相关逻辑[#922](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/922)
+- 新增 TypeScript 声明文件 [#908](https://github.com/Chilfish/NCMApi/pull/908)
+- 更改随机 UA 相关逻辑[#922](https://github.com/Chilfish/NCMApi/pull/922)
 
 ### 3.39.0 | 2020.08.23
 
-- 新增`cloudsearch`接口[#893](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/893)
-- `mv 地址`接口修改分辨率参数 [#883](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/883)
-- 修复新碟上架接口分页问题 [#892](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/892)
+- 新增`cloudsearch`接口[#893](https://github.com/Chilfish/NCMApi/issues/893)
+- `mv 地址`接口修改分辨率参数 [#883](https://github.com/Chilfish/NCMApi/issues/883)
+- 修复新碟上架接口分页问题 [#892](https://github.com/Chilfish/NCMApi/issues/892)
 
 ### 3.38.0 | 2020.08.09
 
-- 新增`楼层评论`,`歌手全部歌曲`接口 [#864](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/864) [#867](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/867)
-- 支持收藏 VIP 或付费歌曲到歌单 [#860](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/860)
-- 支持手动传入`realIP` [#863](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/863)
+- 新增`楼层评论`,`歌手全部歌曲`接口 [#864](https://github.com/Chilfish/NCMApi/issues/864) [#867](https://github.com/Chilfish/NCMApi/issues/867)
+- 支持收藏 VIP 或付费歌曲到歌单 [#860](https://github.com/Chilfish/NCMApi/issues/860)
+- 支持手动传入`realIP` [#863](https://github.com/Chilfish/NCMApi/pull/863)
 
 ### 3.37.2 | 2020.08.04
 
@@ -508,54 +508,54 @@
 
 ### 3.37.0 | 2020.08.03
 
-- 新增`更新头像`,`歌单封面上传`接口和相关例子 [#403](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/403) [#857](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/857)
+- 新增`更新头像`,`歌单封面上传`接口和相关例子 [#403](https://github.com/Chilfish/NCMApi/issues/403) [#857](https://github.com/Chilfish/NCMApi/issues/857)
 - 加入`axios`依赖
 
 ### 3.36.0 | 2020.07.26
 
-- 新增`全部新碟`,`数字专辑-新碟上架`,`数字专辑&数字单曲-榜单`,`数字专辑-语种风格馆`,`数字专辑详情`接口 [#852](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/852)
+- 新增`全部新碟`,`数字专辑-新碟上架`,`数字专辑&数字单曲-榜单`,`数字专辑-语种风格馆`,`数字专辑详情`接口 [#852](https://github.com/Chilfish/NCMApi/issues/852)
 - 更新`新碟上架`接口,修改传入参数,返回数据结构有变化
 
 ### 3.35.0 | 2020.07.18
 
-- 新增`首页-发现`,`首页-发现-圆形图标入口列表`接口 [#851](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/851)
+- 新增`首页-发现`,`首页-发现-圆形图标入口列表`接口 [#851](https://github.com/Chilfish/NCMApi/pull/851)
 
 ### 3.34.2 | 2020.07.13
 
-- 修复`获取用户播放记录`接口参数错误问题 [#849](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/849)
+- 修复`获取用户播放记录`接口参数错误问题 [#849](https://github.com/Chilfish/NCMApi/pull/849)
 
-- 增加`国家编码列表`接口 [#841](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/841)
+- 增加`国家编码列表`接口 [#841](https://github.com/Chilfish/NCMApi/pull/841)
 
 ### 3.34.1 | 2020.07.06
 
-- 登录接口增加 `md5_password` 参数 [#839](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/839)
+- 登录接口增加 `md5_password` 参数 [#839](https://github.com/Chilfish/NCMApi/issues/839)
 
 ### 3.34.0 | 2020.06.25
 
-- 排行榜接口废弃 idx 参数,只支持 id 参数,修复返回数据异常问题 [#830](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/830)
+- 排行榜接口废弃 idx 参数,只支持 id 参数,修复返回数据异常问题 [#830](https://github.com/Chilfish/NCMApi/issues/830)
 - 新增`获取历史日推可用日期列表`,`获取历史日推详细数据` 接口
 
 ### 3.33.2 | 2020.06.23
 
-- 更新每日推荐接口 [#826](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/826)
+- 更新每日推荐接口 [#826](https://github.com/Chilfish/NCMApi/issues/826)
 
 ### 3.33.1 | 2020.06.15
 
-- 修复直接调用时传入 cookie 不生效的问题 [#822](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/822)
+- 修复直接调用时传入 cookie 不生效的问题 [#822](https://github.com/Chilfish/NCMApi/issues/822)
 
 ### 3.33.0 | 2020.06.10
 
-- 歌手榜支持地区参数 [#818](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/818)
-- 新增视频分类列表,推荐视频,获取全部视频列表接口 [#816](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/816)
-- 内置 apicache,修复不能在 NodeJS v13 版本使用的问题 [#817](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/817)
+- 歌手榜支持地区参数 [#818](https://github.com/Chilfish/NCMApi/issues/818)
+- 新增视频分类列表,推荐视频,获取全部视频列表接口 [#816](https://github.com/Chilfish/NCMApi/issues/816)
+- 内置 apicache,修复不能在 NodeJS v13 版本使用的问题 [#817](https://github.com/Chilfish/NCMApi/issues/817)
 
 ### 3.32.3 | 2020.06.07
 
-- 修复 Nodejs 下 cookie 使用格式问题 [#812](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/812)
+- 修复 Nodejs 下 cookie 使用格式问题 [#812](https://github.com/Chilfish/NCMApi/issues/812)
 
 ### 3.32.2 | 2020.06.05
 
-- 新增独家放送列表接口 [#808](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/808)
+- 新增独家放送列表接口 [#808](https://github.com/Chilfish/NCMApi/issues/808)
 
 ### 3.32.1 | 2020.06.03
 
@@ -564,12 +564,12 @@
 ### 3.32.0 | 2020.06.03
 
 - 更新排行榜接口,支持传入榜单 id
-- 新增榜单顺序调整接口 [#806](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/806)
+- 新增榜单顺序调整接口 [#806](https://github.com/Chilfish/NCMApi/issues/806)
 - 完善错误提示信息
 
 ### 3.31.1 | 2020.05.19
 
-- 修复`cookie`没返回的问题 [#778](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/778)
+- 修复`cookie`没返回的问题 [#778](https://github.com/Chilfish/NCMApi/issues/778)
 
 ### 3.31.0 | 2020.05.18
 
@@ -581,11 +581,11 @@
 
 ### 3.29.1 | 2020.05.13
 
-- 调整通知接口分页参数 [#761](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/761)
+- 调整通知接口分页参数 [#761](https://github.com/Chilfish/NCMApi/issues/761)
 
 ### 3.29.0 | 2020.05.11
 
-- 支持批量删除歌单 [#760](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/760)
+- 支持批量删除歌单 [#760](https://github.com/Chilfish/NCMApi/issues/760)
 
 ### 3.28.0 | 2020.05.05
 
@@ -594,7 +594,7 @@
 
 ### 3.27.0 | 2020.04.20
 
-- 新增购买专辑接口 by [TimonPeng](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/740)
+- 新增购买专辑接口 by [TimonPeng](https://github.com/Chilfish/NCMApi/pull/740)
 
 ### 3.26.0 | 2020.04.08
 
@@ -616,85 +616,85 @@
 
 ### 3.25.2 | 2019.11.07
 
-- 修复邮箱登录状态码错误,增加相关提示 [#633](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/633)
+- 修复邮箱登录状态码错误,增加相关提示 [#633](https://github.com/Chilfish/NCMApi/issues/633)
 
 ### 3.25.0 | 2019.11.06
 
-- 新增 `云村热评` 接口[#626](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/626)
+- 新增 `云村热评` 接口[#626](https://github.com/Chilfish/NCMApi/issues/626)
 
 - 新增 `歌手热门50首歌曲` 接口
 
-- 新增`电台24小时节目榜`,`电台24小时主播榜`, `电台最热主播榜`,`电台主播新人榜`,`电台付费精品榜` 接口 [#606](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/606)
+- 新增`电台24小时节目榜`,`电台24小时主播榜`, `电台最热主播榜`,`电台主播新人榜`,`电台付费精品榜` 接口 [#606](https://github.com/Chilfish/NCMApi/issues/606)
 
-- 调整 `歌手分类列表 ` 接口参数 [#624](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/624)
+- 调整 `歌手分类列表 ` 接口参数 [#624](https://github.com/Chilfish/NCMApi/issues/624)
 
 ### 3.24.2 | 2019.10.28
 
-- 修改默认绑定 HOST [#620](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/620)
+- 修改默认绑定 HOST [#620](https://github.com/Chilfish/NCMApi/issues/620)
 
 ### 3.24.1 | 2019.10.25
 
-- 修改默认绑定 HOST [#615](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/615)
+- 修改默认绑定 HOST [#615](https://github.com/Chilfish/NCMApi/issues/615)
 
 ### 3.24.0 | 2019.10.22
 
-- 新增`类别热门电台` 接口 [#607](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/607)
+- 新增`类别热门电台` 接口 [#607](https://github.com/Chilfish/NCMApi/issues/607)
 
 ### 3.23.0 | 2019.10.16
 
-- 修复电台 banner 接口无数据问题[#601](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/601)
+- 修复电台 banner 接口无数据问题[#601](https://github.com/Chilfish/NCMApi/issues/601)
 
-- 更新排行榜 [#602](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/602)
+- 更新排行榜 [#602](https://github.com/Chilfish/NCMApi/issues/602)
 
-- 新增`电台排行榜`,`新晋电台榜`,`热门电台榜`接口 [#604](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/604)
+- 新增`电台排行榜`,`新晋电台榜`,`热门电台榜`接口 [#604](https://github.com/Chilfish/NCMApi/issues/604)
 
 ### 3.22.4 | 2019.09.26
 
-- 修复私信历史记录分页参数问题,更新文档 [#599](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/599)
+- 修复私信历史记录分页参数问题,更新文档 [#599](https://github.com/Chilfish/NCMApi/issues/599)
 
 ### 3.22.3 | 2019.09.24
 
-- 手机号码检测： 添加国家码作为参数，方便检测国外手机号码 [#598](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/598)
+- 手机号码检测： 添加国家码作为参数，方便检测国外手机号码 [#598](https://github.com/Chilfish/NCMApi/pull/598)
 
 ### 3.22.2 | 2019.09.18
 
-- 排行榜参数更新,更新文档[#592](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/592)
+- 排行榜参数更新,更新文档[#592](https://github.com/Chilfish/NCMApi/pull/592)
 
 ### 3.22.1 | 2019.09.12
 
-- 支持回复评论[#589](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/589)
+- 支持回复评论[#589](https://github.com/Chilfish/NCMApi/pull/589)
 
 ### 3.22.0 | 2019.08.25
 
-- 支持 CORS 预检 [#564](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/564) [#578](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/578)
+- 支持 CORS 预检 [#564](https://github.com/Chilfish/NCMApi/issues/564) [#578](https://github.com/Chilfish/NCMApi/pull/578)
 
 ### 3.21.1 | 2019.08.21
 
-- 修复推荐歌单和网易出品 mv 参数错误,更新文档 [#571](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/571) [#572](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/572)
+- 修复推荐歌单和网易出品 mv 参数错误,更新文档 [#571](https://github.com/Chilfish/NCMApi/issues/571) [#572](https://github.com/Chilfish/NCMApi/issues/572)
 
 ### 3.21.0 | 2019.08.20
 
-- 新增`歌单删除接口`[#570](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/570)
+- 新增`歌单删除接口`[#570](https://github.com/Chilfish/NCMApi/issues/570)
 
 ### 3.20.0 | 2019.08.06
 
-- 新增`更新歌单描述`,`更新歌单名`,`更新歌单标签`,`默认搜索关键词` 接口,更新文档[#547](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/547)
+- 新增`更新歌单描述`,`更新歌单名`,`更新歌单标签`,`默认搜索关键词` 接口,更新文档[#547](https://github.com/Chilfish/NCMApi/pull/547)
 
 ### 3.19.0 | 2019.07.24
 
-- 新增`检测手机号码是否已注册`和`初始化昵称`接口[#540](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/540)
+- 新增`检测手机号码是否已注册`和`初始化昵称`接口[#540](https://github.com/Chilfish/NCMApi/pull/540)
 
 ### 3.18.6 | 2019.07.15
 
-- 修复注册异常的问题 [#532](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/532)
+- 修复注册异常的问题 [#532](https://github.com/Chilfish/NCMApi/issues/532)
 
 ### 3.18.5 | 2019.07.14
 
-- 修复部分歌曲无法获得播放链接的问题 [#531](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/531)
+- 修复部分歌曲无法获得播放链接的问题 [#531](https://github.com/Chilfish/NCMApi/issues/531)
 
 ### 3.18.3 | 2019.07.04
 
-- 修复全部 mv`/mv/all` 接口分页参数错误的问题 [#524](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/524)
+- 修复全部 mv`/mv/all` 接口分页参数错误的问题 [#524](https://github.com/Chilfish/NCMApi/issues/524)
 
 ### 3.18.2 | 2019.07.03
 
@@ -702,7 +702,7 @@
 
 ### 3.18.1 | 2019.06.30
 
-- 评论接口增加 `before` 参数以获取超过 5000 条评论数据 [#521](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/521)
+- 评论接口增加 `before` 参数以获取超过 5000 条评论数据 [#521](https://github.com/Chilfish/NCMApi/issues/521)
 
 - 修复 `/msg/comments` 传入参数和文档描述不一致问题
 
@@ -742,9 +742,9 @@
 
 ### 3.13.0 | 2019.05.19
 
-- 新增 eapi 算法 (via:[#491](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/491))
+- 新增 eapi 算法 (via:[#491](https://github.com/Chilfish/NCMApi/pull/491))
 
-- 新增 batch 批量请求接口 (via:[#491](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/491))
+- 新增 batch 批量请求接口 (via:[#491](https://github.com/Chilfish/NCMApi/pull/491))
 
 - 用户动态增加分页参数
 
@@ -778,7 +778,7 @@
 
 ### 3.8.0 | 2019.04.14
 
-- 增加注册,发送验证码,校验验证码接口 via:[https://github.com/Binaryify/NeteaseCloudMusicApi/pull/460](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/460) @[KongValley](https://github.com/KongValley)
+- 增加注册,发送验证码,校验验证码接口 via:[https://github.com/Chilfish/NCMApi/pull/460](https://github.com/Chilfish/NCMApi/pull/460) @[KongValley](https://github.com/KongValley)
 
 ### 3.7.1 | 2019.04.09
 
@@ -846,17 +846,17 @@
 
 ### 3.0.3 | 2018.11.09
 
-- 修复取消喜欢歌曲失败问题 [#360](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/360)
+- 修复取消喜欢歌曲失败问题 [#360](https://github.com/Chilfish/NCMApi/issues/360)
 
-- 补充已喜欢音乐列表接口说明文档 [#370](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/370)
+- 补充已喜欢音乐列表接口说明文档 [#370](https://github.com/Chilfish/NCMApi/issues/370)
 
-- 默认关闭 debug 模式 [#365](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/365)
+- 默认关闭 debug 模式 [#365](https://github.com/Chilfish/NCMApi/pull/365)
 
-- 更新 Dockerfile 文件 [#367](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/367)
+- 更新 Dockerfile 文件 [#367](https://github.com/Chilfish/NCMApi/pull/367)
 
 ### 3.0.1 | 2018.10.21
 
-- 合并 PR([#351](https://github.com/Binaryify/NeteaseCloudMusicApi/pull/351))
+- 合并 PR([#351](https://github.com/Chilfish/NCMApi/pull/351))
 
 - 文档增加 `/top/song` 接口
 
@@ -1086,9 +1086,9 @@ docker 构建文件的一些增强以及增加访问日志和调试输出
 ### 2.6.4 | 2017.7.16
 
 添加缓存机制和随机 UA 机制 感谢[@u3u](https://github.com/u3u)
-[issue:77](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/77) 优化请求
+[issue:77](https://github.com/Chilfish/NCMApi/issues/77) 优化请求
 代码 感谢 [@huhuime](https://github.com/huhuime)
-[issue:83](https://github.com/Binaryify/NeteaseCloudMusicApi/issues/83)
+[issue:83](https://github.com/Chilfish/NCMApi/issues/83)
 
 ### 2.6.2 | 2017.7.16
 

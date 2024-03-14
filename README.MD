@@ -37,7 +37,7 @@ $ npm install
 或者
 
 ```shell
-$ git clone https://github.com/Binaryify/NeteaseCloudMusicApi.git
+$ git clone https://github.com/Chilfish/NCMApi.git
 $ cd NeteaseCloudMusicApi
 $ npm install
 ```
@@ -131,7 +131,7 @@ banner({ type:0 }).then(res=>{
 [文档地址](http://docs.neteasecloudmusicapi.binaryify.com/#/) 
 
 
-![文档](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/docs.png)
+![文档](/static/docs.png)
 
 
 ## 功能特性
@@ -409,7 +409,7 @@ banner({ type:0 }).then(res=>{
 
 ## 更新日志
 
-[changelog](https://github.com/Binaryify/NeteaseCloudMusicApi/blob/master/CHANGELOG.MD)
+[changelog](/CHANGELOG.MD)
 
 ## 单元测试
 
@@ -417,8 +417,8 @@ banner({ type:0 }).then(res=>{
 $ npm test
 ```
 
-![单元测试](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/screenshot1.png)
-![单元测试](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/screenshot2.png)
+![单元测试](/static/screenshot1.png)
+![单元测试](/static/screenshot2.png)
 
 ## SDK
 
@@ -436,4 +436,4 @@ $ npm test
 
 ## License
 
-[The MIT License (MIT)](https://github.com/Binaryify/NeteaseCloudMusicApi/blob/master/LICENSE)
+[The MIT License (MIT)](/LICENSE)
