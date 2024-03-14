@@ -1,9 +1,9 @@
 const fs = require('node:fs')
 const path = require('node:path')
-const exec = require('node:child_process').exec
+const { exec } = require('node:child_process')
 const express = require('express')
 const fileUpload = require('express-fileupload')
-const decode = require('safe-decode-uri-component')
+const decodeUri = require('safe-decode-uri-component')
 
 const packageJSON = require('./package.json')
 const { cookieToJson } = require('./util/index')
@@ -98,25 +98,21 @@ async function getModulesDefinitions(
 async function checkVersion() {
   return new Promise((resolve) => {
     exec('npm info NeteaseCloudMusicApi version', (err, stdout) => {
-      if (!err) {
-        const version = stdout.trim()
-
-        /**
-         * @param {VERSION_CHECK_RESULT} status
-         */
-        const resolveStatus = status =>
-          resolve({
-            status,
-            ourVersion: packageJSON.version,
-            npmVersion: version,
-          })
-
-        resolveStatus(
-          packageJSON.version < version
-            ? VERSION_CHECK_RESULT.NOT_LATEST
-            : VERSION_CHECK_RESULT.LATEST,
-        )
+      if (err) {
+        resolve({
+          status: VERSION_CHECK_RESULT.FAILED,
+        })
       }
+      const version = stdout.trim()
+      const status = packageJSON.version < version
+        ? VERSION_CHECK_RESULT.NOT_LATEST
+        : VERSION_CHECK_RESULT.LATEST
+
+      resolve({
+        status,
+        ourVersion: packageJSON.version,
+        npmVersion: version,
+      })
     })
 
     resolve({
@@ -159,14 +155,17 @@ async function consturctServer(moduleDefs) {
   app.use((req, _, next) => {
     req.cookies = {}
     // ;(req.headers.cookie || '').split(/\s*;\s*/).forEach((pair) => { //  Polynomial regular expression //
-    ;(req.headers.cookie || '').split(/;\s+|(?<!\s)\s+$/g).forEach((pair) => {
-      const crack = pair.indexOf('=')
-      if (crack < 1 || crack === pair.length - 1)
-        return
-      req.cookies[decode(pair.slice(0, crack)).trim()] = decode(
-        pair.slice(crack + 1),
-      ).trim()
-    })
+    const cookie = req.headers.cookie || ''
+
+    cookie
+      .split(/;\s+|(?<!\s)\s+$/g)
+      .forEach((pair) => {
+        const crack = pair.indexOf('=')
+        if (crack < 1 || crack === pair.length - 1)
+          return
+        const key = decodeUri(pair.slice(0, crack)).trim()
+        req.cookies[key] = decodeUri(pair.slice(crack + 1)).trim()
+      })
     next()
   })
 
@@ -200,16 +199,15 @@ async function consturctServer(moduleDefs) {
   /**
    * Load every modules in this directory
    */
-  const moduleDefinitions
-    = moduleDefs
+  const moduleDefinitions = moduleDefs
     || (await getModulesDefinitions(path.join(__dirname, 'module'), special))
 
   for (const moduleDef of moduleDefinitions) {
     // Register the route.
     app.use(moduleDef.route, async (req, res) => {
-      ;[req.query, req.body].forEach((item) => {
+      [req.query, req.body].forEach((item) => {
         if (typeof item.cookie === 'string')
-          item.cookie = cookieToJson(decode(item.cookie))
+          item.cookie = cookieToJson(decodeUri(item.cookie))
       })
 
       const query = Object.assign(
@@ -226,8 +224,8 @@ async function consturctServer(moduleDefs) {
           const obj = [...params]
           let ip = req.ip
 
-          if (ip.substr(0, 7) === '::ffff:')
-            ip = ip.substr(7)
+          if (ip.substring(0, 7) === '::ffff:')
+            ip = ip.substring(7)
 
           // console.log(ip)
           obj[3] = {
@@ -236,29 +234,28 @@ async function consturctServer(moduleDefs) {
           }
           return request(...obj)
         })
-        console.log('[OK]', decode(req.originalUrl))
+        console.log('[OK]', decodeUri(req.originalUrl))
 
         const cookies = moduleResponse.cookie
-        if (!query.noCookie) {
-          if (Array.isArray(cookies) && cookies.length > 0) {
-            if (req.protocol === 'https') {
-              // Try to fix CORS SameSite Problem
-              res.append(
-                'Set-Cookie',
-                cookies.map((cookie) => {
-                  return `${cookie}; SameSite=None; Secure`
-                }),
-              )
-            }
-            else {
-              res.append('Set-Cookie', cookies)
-            }
+
+        if (!query.noCookie && Array.isArray(cookies) && cookies.length > 0) {
+          if (req.protocol === 'https') {
+            // Try to fix CORS SameSite Problem
+            res.append(
+              'Set-Cookie',
+              cookies.map((cookie) => {
+                return `${cookie}; SameSite=None; Secure`
+              }),
+            )
+          }
+          else {
+            res.append('Set-Cookie', cookies)
           }
         }
         res.status(moduleResponse.status).send(moduleResponse.body)
       }
       catch (/** @type {*} */ moduleResponse) {
-        console.log('[ERR]', decode(req.originalUrl), {
+        console.log('[ERR]', decodeUri(req.originalUrl), {
           status: moduleResponse.status,
           body: moduleResponse.body,
         })
@@ -292,15 +289,16 @@ async function serveNcmApi(options) {
   const port = Number(options.port || process.env.PORT || '3000')
   const host = options.host || process.env.HOST || ''
 
-  const checkVersionSubmission
-    = options.checkVersion
-    && checkVersion().then(({ npmVersion, ourVersion, status }) => {
+  const checkVersionSubmission = options.checkVersion
+    ? checkVersion().then(({ npmVersion, ourVersion, status }) => {
       if (status === VERSION_CHECK_RESULT.NOT_LATEST) {
         console.log(
           `最新版本: ${npmVersion}, 当前版本: ${ourVersion}, 请及时更新`,
         )
       }
     })
+    : Promise.resolve()
+
   const constructServerSubmission = consturctServer(options.moduleDefs)
 
   const [_, app] = await Promise.all([

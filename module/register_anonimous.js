@@ -14,7 +14,10 @@ function cloudmusic_dll_encode_id(some_id) {
   return CryptoJS.enc.Base64.stringify(digest)
 }
 
-module.exports = async (query, request) => {
+/**
+ * 生成匿名账号
+ */
+async function register_anonimous(query, request) {
   query.cookie.os = 'iOS'
   const deviceId = `NMUSIC`
   const encodedId = CryptoJS.enc.Base64.stringify(
@@ -48,3 +51,5 @@ module.exports = async (query, request) => {
   }
   return result
 }
+
+module.exports = register_anonimous
