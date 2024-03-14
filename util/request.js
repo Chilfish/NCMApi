@@ -11,10 +11,16 @@ const { default: axios } = require('axios')
 const tunnel = require('tunnel')
 const encrypt = require('./crypto')
 
-const anonymous_token = fs.readFileSync(
-  path.resolve(tmpPath, './anonymous_token'),
-  'utf-8',
-)
+let anonymous_token = ''
+try {
+  fs.readFileSync(
+    path.resolve(tmpPath, './anonymous_token'),
+    'utf-8',
+  )
+}
+catch (e) {
+  anonymous_token = ''
+}
 // request.debug = true // 开启可看到更详细信息
 
 /**

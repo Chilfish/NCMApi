@@ -10,8 +10,6 @@ const { cookieToJson } = require('./index')
 async function generateCookie() {
   try {
     const tokenPath = path.resolve(tmpPath, 'anonymous_token')
-    if (!fs.existsSync(tokenPath))
-      fs.writeFileSync(tokenPath, '', 'utf-8')
 
     const res = await register_anonimous()
     const cookie = res.body.cookie
